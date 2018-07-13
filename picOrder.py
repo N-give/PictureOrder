@@ -20,7 +20,7 @@ class MyMainWindow(QMainWindow):
 
 
     def next_orderForm(self):
-        print("next was pressed")
+        print("next press")
 
 
 def main(argv):
