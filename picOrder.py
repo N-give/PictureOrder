@@ -2,7 +2,7 @@ import sys
 import os
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt
-import playerInfoForm
+from windowClasses import playerInfoForm
 
 
 class PictureOrder():
@@ -14,8 +14,13 @@ class MyMainWindow(QMainWindow):
     def __init__(self, parent=None):
         super(MyMainWindow, self).__init__(parent)
         self.setWindowTitle('Picture Order Form')
-        self.form_widget = playerInfoForm.PlayerInfoWidget(self)
-        self.setCentralWidget(self.form_widget)
+        self.player_form_widget = playerInfoForm.PlayerInfoWidget(self)
+        self.setCentralWidget(self.player_form_widget)
+        self.player_form_widget.pb_next.clicked.connect(self.next_orderForm)
+
+
+    def next_orderForm(self):
+        print("next was pressed")
 
 
 def main(argv):
