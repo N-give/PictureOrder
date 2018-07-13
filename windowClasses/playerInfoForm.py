@@ -62,6 +62,9 @@ def create_stateDropdown():
     dropdown.addItem('Wisconsin')
     dropdown.addItem('Wyoming')
     
+    dropdown.setStyleSheet("combobox-popup: O")
+    dropdown.setMaxVisibleItems(5)
+
     return dropdown
 
 
@@ -115,7 +118,7 @@ class PlayerInfoWidget(QWidget):
         self.le_address2 = create_QLineEdit("Address Line 2")
         self.le_city = create_QLineEdit("City")
         self.cb_state = create_stateDropdown()
-        self.le_zip_code = create_QLineEdit('Zipe Code')
+        self.le_zip_code = create_QLineEdit('Zip Code')
 
         city_hlayout = QHBoxLayout()
         city_hlayout.addWidget(self.le_city)
@@ -140,15 +143,18 @@ class PlayerInfoWidget(QWidget):
         self.le_team = create_QLineEdit('ex. Reds')
 
         # Set vertical layout for player information window 
-        v_layout = QFormLayout()
-        v_layout.addRow(self.label_player, player_hlayout)
-        v_layout.addRow(self.label_parent, parent_hlayout)
-        v_layout.addRow(self.label_phone, phone_hlayout)
-        v_layout.addRow(self.label_address, address_vlayout)
-        v_layout.addRow(self.label_league, self.le_league)
-        v_layout.addRow(self.label_coach, self.le_coach)
-        v_layout.addRow(self.label_team, self.le_team)
-        v_layout.addRow(next_button_layout)
+        form_player = QFormLayout()
+        form_player.addRow(self.label_player, player_hlayout)
+        form_player.addRow(self.label_parent, parent_hlayout)
+        form_player.addRow(self.label_phone, phone_hlayout)
+        form_player.addRow(self.label_address, address_vlayout)
+        form_player.addRow(self.label_league, self.le_league)
+        form_player.addRow(self.label_coach, self.le_coach)
+        form_player.addRow(self.label_team, self.le_team)
+
+        v_layout = QVBoxLayout()
+        v_layout.addLayout(form_player)
+        v_layout.addLayout(next_button_layout)
 
         self.setLayout(v_layout)
 
