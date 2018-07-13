@@ -12,7 +12,6 @@ class PictureOrder():
 class MyMainWindow(QMainWindow):
 
     def __init__(self, parent=None):
-        print("stuff")
         super(MyMainWindow, self).__init__(parent)
         self.setWindowTitle('Picture Order Form')
         self.player_form_widget = playerInfoForm.PlayerInfoWidget(self)
