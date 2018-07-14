@@ -30,18 +30,23 @@ class MyMainWindow(QMainWindow):
         self.setCentralWidget(self.widget_stack)
 
         # button click event listeners
-        self.player_form_widget.pb_next.clicked.connect(self.next_orderForm)
-        self.order_form.pb_back.clicked.connect(self.back_orderForm)
         self.player_form_widget.pb_cancel.clicked.connect(self.cancel_orderForm)
+        self.player_form_widget.pb_next.clicked.connect(self.next_orderForm)
+
+        self.order_form.pb_cancel.clicked.connect(self.cancel_orderForm)
+        self.order_form.pb_back.clicked.connect(self.back_orderForm)
+        self.order_form.pb_next.clicked.connect(self.next_orderForm)
 
 
     def next_orderForm(self):
         self.currentIndex += 1
+        self.currentIndex %= QStackedWidget.__len__(self.widget_stack)
         self.widget_stack.setCurrentIndex(self.currentIndex)
 
 
     def back_orderForm(self):
         self.currentIndex -= 1
+        self.currentIndex %= QStackedWidget.__len__(self.widget_stack)
         self.widget_stack.setCurrentIndex(self.currentIndex)
 
 

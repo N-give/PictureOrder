@@ -78,8 +78,8 @@ class PlayerInfoWidget(QWidget):
         self.pb_cancel = QPushButton("Cancel")
 
         next_button_layout = QHBoxLayout()
-        next_button_layout.addStretch(1)
         next_button_layout.addWidget(self.pb_cancel)
+        next_button_layout.addStretch(1)
         next_button_layout.addWidget(self.pb_next)
 
         # Create line edits
