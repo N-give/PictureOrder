@@ -85,19 +85,19 @@ class PlayerInfoWidget(QWidget):
         # Create line edits
         # Creating player fields
         self.label_player = QLabel('Player Name')
-        self.le_player_first_name = create_QLineEdit("First Name")
-        self.le_player_last_name = create_QLineEdit("Last Name")
+        self.le_player_first = create_QLineEdit("First Name")
+        self.le_player_last = create_QLineEdit("Last Name")
         player_hlayout = QHBoxLayout()
-        player_hlayout.addWidget(self.le_player_first_name)
-        player_hlayout.addWidget(self.le_player_last_name)
+        player_hlayout.addWidget(self.le_player_first)
+        player_hlayout.addWidget(self.le_player_last)
 
         # Creat parent fields
         self.label_parent = QLabel('Parent Name')
-        self.le_parent_first_name = create_QLineEdit("First Name")
-        self.le_parent_last_name = create_QLineEdit("Last Name")
+        self.le_parent_first = create_QLineEdit("First Name")
+        self.le_parent_last = create_QLineEdit("Last Name")
         parent_hlayout = QHBoxLayout()
-        parent_hlayout.addWidget(self.le_parent_first_name)
-        parent_hlayout.addWidget(self.le_parent_last_name)
+        parent_hlayout.addWidget(self.le_parent_first)
+        parent_hlayout.addWidget(self.le_parent_last)
 
         # Create phone fields
         self.label_phone = QLabel('Phone Number')
@@ -132,7 +132,7 @@ class PlayerInfoWidget(QWidget):
 
         # Create league line edit
         self.label_league = QLabel('League')
-        self.le_league = create_QLineEdit("ex. Coaches' Pitch")
+        self.le_league = create_QLineEdit("ex. Coaches Pitch")
 
         # Create coach line edit
         self.label_coach = QLabel('Coach')
@@ -157,7 +157,3 @@ class PlayerInfoWidget(QWidget):
         v_layout.addLayout(next_button_layout)
 
         self.setLayout(v_layout)
-
-        #pb_next.clicked.connect(print('testing'))
-
-
