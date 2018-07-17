@@ -114,25 +114,25 @@ class OrderFormWidget(QWidget):
 
         # Create A la carte items
         self.le_wallets = QLineEdit()
-        self.le_wallets.setPlaceholderText('Number of Orders')
+        self.le_wallets.setPlaceholderText('Quantity')
 
         self.le_46Ind = QLineEdit()
-        self.le_46Ind.setPlaceholderText('Number of Orders')
+        self.le_46Ind.setPlaceholderText('Quantity')
 
         self.le_57Ind = QLineEdit()
-        self.le_57Ind.setPlaceholderText('Number of Orders')
+        self.le_57Ind.setPlaceholderText('Quantity')
 
         self.le_810Ind = QLineEdit()
-        self.le_810Ind.setPlaceholderText('Number of Orders')
+        self.le_810Ind.setPlaceholderText('Quantity')
 
         self.le_57Team = QLineEdit()
-        self.le_57Team.setPlaceholderText('Number of Orders')
+        self.le_57Team.setPlaceholderText('Quantity')
 
         self.le_mag = QLineEdit()
-        self.le_mag.setPlaceholderText('Number of Orders')
+        self.le_mag.setPlaceholderText('Quantity')
 
         self.le_mem = QLineEdit()
-        self.le_mem.setPlaceholderText('Number of Orders')
+        self.le_mem.setPlaceholderText('Quantity')
 
         g_carte = QGroupBox('A la Carte')
         form_carte = QGridLayout()
