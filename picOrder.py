@@ -29,29 +29,64 @@ class MyMainWindow(QMainWindow):
         # setting central widget to widget stack
         self.setCentralWidget(self.widget_stack)
 
+        # Creating order list
+        self.orders = []
+
         # button click event listeners
-        self.player_form_widget.pb_cancel.clicked.connect(self.cancel_orderForm)
-        self.player_form_widget.pb_next.clicked.connect(self.next_orderForm)
+        self.player_form_widget.pb_cancel.clicked.connect(self.cancel_playerForm)
+        self.player_form_widget.pb_next.clicked.connect(self.next_playerForm)
 
-        self.order_form.pb_cancel.clicked.connect(self.cancel_orderForm)
+        # self.order_form.pb_cancel.clicked.connect(self.cancel_orderForm)
         self.order_form.pb_back.clicked.connect(self.back_orderForm)
-        self.order_form.pb_next.clicked.connect(self.next_orderForm)
+        # self.order_form.pb_next.clicked.connect(self.next_orderForm)
 
 
-    def next_orderForm(self):
+    # Player info flow control buttons
+    def next_playerForm(self):
         self.currentIndex += 1
         self.currentIndex %= QStackedWidget.__len__(self.widget_stack)
         self.widget_stack.setCurrentIndex(self.currentIndex)
+
+        self.orders.append(PictureOrder())
+        self.orders[len(self.orders) - 1].player_name = ' '.join([
+            self.player_form_widget.le_player_first.text().strip(),
+            self.player_form_widget.le_player_last.text().strip()
+            ])
+
+        self.orders[len(self.orders) - 1].parent_name = ' '.join([
+            self.player_form_widget.le_parent_first.text().strip(),
+            self.player_form_widget.le_parent_last.text().strip()
+            ])
+        
+        self.orders[len(self.orders) - 1].phone = ''.join([
+            self.player_form_widget.le_area_code.text().strip(),
+            self.player_form_widget.le_prefix.text().strip(),
+            self.player_form_widget.le_line_number.text().strip()
+            ])
+
+        self.orders[len(self.orders) - 1].address = '\n'.join([
+            self.player_form_widget.le_address1.text().strip(),
+            self.player_form_widget.le_address2.text().strip(),
+            ' '.join([
+                self.player_form_widget.le_city.text().strip(),
+                self.player_form_widget.cb_state.currentText().strip(),
+                self.player_form_widget.le_zip_code.text().strip()
+                ])
+            ])
+
+        self.orders[len(self.orders) - 1].league = self.player_form_widget.le_league.text().strip()
+        self.orders[len(self.orders) - 1].coach = self.player_form_widget.le_coach.text().strip()
+        self.orders[len(self.orders) - 1].team = self.player_form_widget.le_league.text().strip()
+
+
+    def cancel_playerForm(self):
+        print("cancel press")
 
 
     def back_orderForm(self):
         self.currentIndex -= 1
         self.currentIndex %= QStackedWidget.__len__(self.widget_stack)
         self.widget_stack.setCurrentIndex(self.currentIndex)
-
-
-    def cancel_orderForm(self):
-        print("cancel press")
 
 
 def main(argv):
