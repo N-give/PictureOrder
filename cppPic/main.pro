@@ -1,3 +1,3 @@
 TEMPLATE += app
 QT += widgets
-SOURCES += main.cpp infoForm.cpp flowButtons.cpp
+SOURCES += main.cpp playerName.cpp flowButtons.cpp

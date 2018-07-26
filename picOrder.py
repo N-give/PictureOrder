@@ -57,7 +57,7 @@ class MyMainWindow(QMainWindow):
             self.player_form_widget.le_parent_first.text().strip(),
             self.player_form_widget.le_parent_last.text().strip()
             ])
-        
+
         self.orders[len(self.orders) - 1].phone = ''.join([
             self.player_form_widget.le_area_code.text().strip(),
             self.player_form_widget.le_prefix.text().strip(),
