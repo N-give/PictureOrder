@@ -1,0 +1,41 @@
+Debugger listening on ws://127.0.0.1:39073/fca9bdc7-86c9-4b58-a720-978bf8b93148
+For help, see: https://nodejs.org/en/docs/inspector
+Debugger attached.
+Debugger listening on ws://127.0.0.1:34631/45360797-e53b-4342-8e2b-454c1f756fa4
+For help, see: https://nodejs.org/en/docs/inspector
+Debugger attached.
+
+> server@0.0.0 devstart /home/nate/Projects/pictureOrder/webApp/server
+> nodemon ./bin/www
+
+Debugger listening on ws://127.0.0.1:45787/1ac970bc-4a35-48a7-b182-199f20913208
+For help, see: https://nodejs.org/en/docs/inspector
+Debugger attached.
+[33m[nodemon] 1.18.3[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Debugger listening on ws://127.0.0.1:39785/eae71cca-46a1-45f3-b791-40eb83bdc12e
+For help, see: https://nodejs.org/en/docs/inspector
+events.js:167
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+Emitted 'error' event at:
+    at fs.read (fs.js:2126:12)
+    at FSReqWrap.wrapper [as oncomplete] (fs.js:583:17)
+Debugger listening on ws://127.0.0.1:45787/1ac970bc-4a35-48a7-b182-199f20913208
+For help, see: https://nodejs.org/en/docs/inspector
+/home/nate/.nvm/versions/node/v10.1.0/bin/node[28898]: ../src/fs_event_wrap.cc:90:static void node::{anonymous}::FSEventWrap::GetInitialized(const v8::FunctionCallbackInfo<v8::Value>&): Assertion `wrap != nullptr' failed.
+ 1: node::Abort() [/home/nate/.nvm/versions/node/v10.1.0/bin/node]
+ 2: 0x876c55 [/home/nate/.nvm/versions/node/v10.1.0/bin/node]
+ 3: 0x86601a [/home/nate/.nvm/versions/node/v10.1.0/bin/node]
+ 4: v8::internal::FunctionCallbackArguments::Call(v8::internal::CallHandlerInfo*) [/home/nate/.nvm/versions/node/v10.1.0/bin/node]
+ 5: 0xacda3a [/home/nate/.nvm/versions/node/v10.1.0/bin/node]
+ 6: v8::internal::Builtins::InvokeApiFunction(v8::internal::Isolate*, bool, v8::internal::Handle<v8::internal::HeapObject>, v8::internal::Handle<v8::internal::Object>, int, v8::internal::Handle<v8::internal::Object>*, v8::internal::Handle<v8::internal::HeapObject>) [/home/nate/.nvm/versions/node/v10.1.0/bin/node]
+ 7: v8::internal::Object::GetPropertyWithAccessor(v8::internal::LookupIterator*) [/home/nate/.nvm/versions/node/v10.1.0/bin/node]
+ 8: v8::internal::Object::GetProperty(v8::internal::LookupIterator*) [/home/nate/.nvm/versions/node/v10.1.0/bin/node]
+ 9: v8::internal::LoadIC::Load(v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Name>) [/home/nate/.nvm/versions/node/v10.1.0/bin/node]
+10: v8::internal::Runtime_LoadIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*) [/home/nate/.nvm/versions/node/v10.1.0/bin/node]
+11: 0x2740e9b8427d

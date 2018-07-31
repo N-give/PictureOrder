@@ -1,0 +1,12 @@
+{
+  "name": "picServer",
+  "version": "1.0.0",
+  "description": "Server for picture ordering",
+  "main": "index.js",
+  "repository": "https://github.com/N-give/PictureOrder",
+  "author": "Nathan Givens",
+  "license": "MIT",
+  "dependencies": {
+    "express-generator": "^4.16.0"
+  }
+}
